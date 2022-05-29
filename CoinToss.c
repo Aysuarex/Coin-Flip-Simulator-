@@ -1,52 +1,73 @@
 #include <stdio.h>
-#include <time.h>
+#include <stdlib.h>
+#include <sys/time.h>
 
 int coinToss();
-int rand();
-int srand();
-//char getch();
 int i, flips;
 int headCount= 0;
 int tailCount= 0;
 
 int main() 
 {
-    printf("Welcome to Coin Flip Emulator!\n");
+    int choice;
+
+    system("cls");
+    system("color 0b");
+    
+    START:
+    printf("\n----------------------------------------------------\n");
+    printf("Welcome to Coin Flip Simulator!\n");
     printf("Enter the amount of times you want to flip:  ");
     scanf("%d", &flips);
 
     srand(time(NULL));
-    for(i=0; i<=flips; i++);
+    for(i=0; i<flips; i++)
     {
         if(coinToss()==0)
             headCount++;    
         else 
             tailCount++;
-        //if (i%10 == 0)
-          //  putchar('\n');
+        if (i%10 == 0)
+            putchar('\n');
         //getch();
-        printf("Head was flipped %d times.", headCount);
-        printf("Tail was flipped %d times.", tailCount);
+    }
+    printf("\nHeads was flipped %d times.", headCount);
+    printf("\nTails was flipped %d times.\n\n\n", tailCount);
 
+    printf("----------------------------------------------------");
+    printf("Press A to continue flipping");
+    printf("Press X to exit");
+    scanf("%c", %choice);
+
+    switch (choice)
+    {
+    case 'A':
+        goto START
+        break;
+    
+    case 'X':
+        exit(0);
+    
+    default:
+        printf("ERROR! Enter valid input");
+        break;
     }
     
-    //printf("Head was flipped %d times.", headCount);
-    //printf("Tail was flipped %d times.", tailCount);
+    goto START;
+
+    return 0;
 }
 
 int coinToss()
 {
-    for(i=0;i<=flips;i++);
-    {
         if(rand()%2 == 0)
         {
-            //printf("Heads"); 
+            printf("H "); 
             return 0;
         }
         else
         {
-            //printf("Tails");
+            printf("T ");
             return 1;
-        }
     }
 }
