@@ -14,11 +14,11 @@ int main()
 
     system("cls");
     system("color 0b");
-    
+    //experiment the switch statements with diferent colors
     START:
     printf("\n----------------------------------------------------\n");
     printf("Welcome to Coin Flip Simulator!\n");
-    printf("Enter the amount of times you want to flip:  ");
+    printf("Enter the number of times you want to flip:  ");
     scanf("%d", &flips);
 
     srand(time(NULL));
@@ -28,7 +28,7 @@ int main()
             headCount++;    
         else 
             tailCount++;
-        if (i%10 == 0)
+        if (i%10 == 9 )
             putchar('\n');
         //getch();
     }
@@ -54,8 +54,8 @@ int main()
         printf("\nERROR! Enter valid input");
         break;
     }
-    
-    goto START;
+
+    //goto START;
 
     return 0;
 }
