@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/time.h>
+#include <windows.h>
 
 int coinToss();
 int i, flips;
@@ -34,22 +35,23 @@ int main()
     printf("\nHeads was flipped %d times.", headCount);
     printf("\nTails was flipped %d times.\n\n\n", tailCount);
 
+    Sleep(1000);
     printf("----------------------------------------------------");
-    printf("Press A to continue flipping");
-    printf("Press X to exit");
-    scanf("%c", %choice);
+    printf("\nPress A to continue flipping");
+    printf("\nPress X to exit");
+    scanf("%c", &choice);
 
     switch (choice)
     {
     case 'A':
-        goto START
+        goto START;
         break;
     
     case 'X':
         exit(0);
     
     default:
-        printf("ERROR! Enter valid input");
+        printf("\nERROR! Enter valid input");
         break;
     }
     
