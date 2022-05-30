@@ -5,17 +5,19 @@
 
 int coinToss();
 int i, flips;
-int headCount= 0;
-int tailCount= 0;
+int headCount;
+int tailCount;
 int getch();
 int main() 
 {
-    int choice;
+    char choice;
+    START: //Reference point
 
-    system("color 0b");
-    //experiment the switch statements with diferent colors
-    START:
+    headCount= 0;
+    tailCount= 0;
+
     system("cls");
+    system("color 0b");
     printf("\n----------------------------------------------------\n");
     printf("Welcome to Coin Flip Simulator!\n");
     printf("Enter the number of times you want to flip:  ");
@@ -32,29 +34,33 @@ int main()
             putchar('\n');
     }
     printf("\nHeads was flipped %d times.", headCount);
-    printf("\nTails was flipped %d times.\n\n\n", tailCount);
-    //getch();
-    /*Sleep(1000);
-    printf("----------------------------------------------------");
-    printf("\nPress A to continue flipping");
-    printf("\nPress X to exit\n\n\n");
-    scanf("%c", &choice);
+    printf("\nTails was flipped %d times.\n", tailCount);
+    
+    Sleep(1000);
+
+    Replay:
+    printf("\n\n----------------------------------------------------");
+    printf("\nPress A to Flip again");
+    printf("\nPress X to exit\n\n\t");
+    scanf("%s", &choice);
 
     switch (choice)
     {
     case 'A':
+    {
         goto START;
         break;
+    }
     
     case 'X':
         exit(0);
     
     default:
-        printf("\nERROR! Enter valid input");
+        printf("\nERROR! Enter valid input\n");
+        Sleep(500);
+        goto Replay;
         break;
-    }*/
-    //getch();
-    goto START;
+    }
 
     return 0;
 }
